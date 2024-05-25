@@ -1,16 +1,62 @@
+<script setup>
+defineProps({
+  game: Object
+})
+</script>
 <template>
   <div>
-    <img src="https://wargm.ru/img/db/5l/5lnr3j7ruku.jpg" alt="" />
-    <h1>dffd</h1>
-    <p>sdfd</p>
+    <img :src="game.thumbnail" alt="" />
+    <h1>{{game.title}}</h1>
+    <p>{{game.short_description}}</p>
     <nav>
       <i class="far fa-jedi"></i>
-      <h4>dfdsdfseewf</h4>
+      <h4>{{game.release_date}}</h4>
     </nav>
     <nav>
         <i class="far fa-space-station-moon-alt"></i>
-        <h4>fffffff</h4>
+        <h4>{{game.platform}}</h4>
     </nav>
     <button>Подробнее</button>
   </div>
 </template>
+<style scoped>
+div {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: darkkhaki;
+  color: darkred;
+}
+img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+h1 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+p {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+nav {
+  display: flex;
+  margin-top: 20px;
+  font-size: 20px;
+}
+i {
+  margin-right: 10px;
+}
+button {
+  background-color: green;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top:20px;
+  margin-left: auto;
+  border-radius: 10px;
+}
+</style>
