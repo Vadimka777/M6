@@ -1,22 +1,24 @@
 <script setup>
 defineProps({
-  game: Object
-})
+  game: Object,
+});
 </script>
 <template>
   <div>
     <img :src="game.thumbnail" alt="" />
-    <h1>{{game.title}}</h1>
-    <p>{{game.short_description}}</p>
+    <h1>{{ game.title }}</h1>
+    <p>{{ game.short_description }}</p>
     <nav>
       <i class="far fa-jedi"></i>
-      <h4>{{game.release_date}}</h4>
+      <h4>{{ game.release_date }}</h4>
     </nav>
     <nav>
-        <i class="far fa-space-station-moon-alt"></i>
-        <h4>{{game.platform}}</h4>
+      <i class="far fa-space-station-moon-alt"></i>
+      <h4>{{ game.platform }}</h4>
     </nav>
-    <button>Подробнее</button>
+    <router-link :to="{ name: 'detail', params: { id: game.id } }"
+      >Подробнее</router-link
+    >
   </div>
 </template>
 <style scoped>
@@ -51,11 +53,11 @@ nav {
 i {
   margin-right: 10px;
 }
-button {
+a {
   background-color: green;
   font-size: 20px;
   padding: 10px 20px;
-  margin-top:20px;
+  margin-top: 20px;
   margin-left: auto;
   border-radius: 10px;
 }
